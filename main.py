@@ -36,21 +36,6 @@ from core import (
     get_youtube_playlist)
 
 
-REPO = """
-🤖 **Music Player**
-- Repo: [GitHub](https://github.com/AsmSafone/MusicPlayer)
-- License: AGPL-3.0-or-later
-"""
-
-
-@app.on_message(
-    filters.command("repo", config.PREFIXES) & ~filters.private & ~filters.edited
-)
-@handle_error
-async def repo(_, message: Message):
-    await message.reply_text(REPO, disable_web_page_preview=True)
-
-
 @app.on_message(
     filters.command("ping", config.PREFIXES) & ~filters.private & ~filters.edited
 )
@@ -72,7 +57,7 @@ async def help(_, message: Message, lang):
 
 
 @app.on_message(
-    filters.command(["p", "play"], config.PREFIXES) & ~filters.private & ~filters.edited
+    filters.command(["p", "play", "chlao"], config.PREFIXES) & ~filters.private & ~filters.edited
 )
 @register
 @language
@@ -169,7 +154,7 @@ async def live_stream(_, message: Message, lang):
 
 
 @app.on_message(
-    filters.command(["skip", "next"], config.PREFIXES)
+    filters.command(["skip", "next", "agla"], config.PREFIXES)
     & ~filters.private
     & ~filters.edited
 )
@@ -205,7 +190,7 @@ async def skip_track(_, message: Message, lang):
 
 
 @app.on_message(
-    filters.command(["m", "mute"], config.PREFIXES) & ~filters.private & ~filters.edited
+    filters.command(["m", "mute", "chup"], config.PREFIXES) & ~filters.private & ~filters.edited
 )
 @register
 @language
@@ -222,7 +207,7 @@ async def mute_vc(_, message: Message, lang):
 
 
 @app.on_message(
-    filters.command(["um", "unmute"], config.PREFIXES)
+    filters.command(["um", "unmute", "abbolo"], config.PREFIXES)
     & ~filters.private
     & ~filters.edited
 )
@@ -241,7 +226,7 @@ async def unmute_vc(_, message: Message, lang):
 
 
 @app.on_message(
-    filters.command(["ps", "pause"], config.PREFIXES)
+    filters.command(["ps", "pause", "ruko"], config.PREFIXES)
     & ~filters.private
     & ~filters.edited
 )
@@ -260,7 +245,7 @@ async def pause_vc(_, message: Message, lang):
 
 
 @app.on_message(
-    filters.command(["rs", "resume"], config.PREFIXES)
+    filters.command(["rs", "resume", "hnbolo"], config.PREFIXES)
     & ~filters.private
     & ~filters.edited
 )
@@ -279,7 +264,7 @@ async def resume_vc(_, message: Message, lang):
 
 
 @app.on_message(
-    filters.command(["stop", "leave"], config.PREFIXES)
+    filters.command(["stop", "leave", "band"], config.PREFIXES)
     & ~filters.private
     & ~filters.edited
 )
